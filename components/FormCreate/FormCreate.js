@@ -33,9 +33,8 @@ const FormCreate = () => {
         <h2>Create a new Tuit</h2>
         <form onSubmit={onSubmit} autoComplete="off" noValidate>
           <div className="form-group">
-            <label htmlFor="text">Text:</label>
-            <input
-              placeholder="Enter the text of the twit"
+            <textarea
+              placeholder="Write something please"
               type="text"
               value={postData.text}
               className="form-control"

@@ -8,13 +8,16 @@ const Tuit = ({ tuit }) => {
 
   return (
     <>
-      <h3>{tuit.text}</h3>
+      <li key={tuit.id} className="card_li">
+        <p>{tuit.text}</p>
+        <p>Likes: {tuit.likes}</p>
+      </li>
     </>
   );
 };
 
 export const getServerSideProps = async ({ params }) => {
-  const response = await fetch("https://tuits.herokuapp.com/" + params.id);
+  const response = await fetch("https://tuits.herokuapp.com/tuits" + params.id);
   const tuit = await response.json();
 
   return {

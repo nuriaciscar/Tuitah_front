@@ -1,5 +1,6 @@
 import Head from "next/head";
 import styles from "./index.module.css";
+import Link from "next/link";
 
 const Home = () => (
   <div className={styles.container}>
@@ -9,7 +10,9 @@ const Home = () => (
     </Head>
 
     <main>
-      <h1 className={styles.title}>Welcome to TuITAH</h1>
+      <p className="welcome">
+        <Link href="/twitList">WELCOME</Link>
+      </p>
     </main>
   </div>
 );

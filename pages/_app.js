@@ -1,3 +1,4 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import HeaderNavMenu from "@/components/HeaderNavMenu/HeaderNavMenu";
 import "../styles/global.css";
 

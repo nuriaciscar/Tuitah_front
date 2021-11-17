@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const TwitList = () => {
+const TwitList = ({ tuits }) => {
   return (
     <>
       <h2> Twit List :</h2>

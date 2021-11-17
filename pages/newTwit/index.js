@@ -1,7 +1,7 @@
 const NewTwit = () => {
   return (
     <>
-      <h2> New Twit :</h2>
+      <h2>New Twit:</h2>
     </>
   );
 };

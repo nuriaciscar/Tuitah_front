@@ -19,7 +19,7 @@ const TwitList = ({ tuits }) => {
 export default TwitList;
 
 export const getServerSideProps = async () => {
-  const response = await fetch("https://tuits.herokuapp.com/");
+  const response = await fetch("https://tuits.herokuapp.com/tuits");
   const tuits = await response.json();
 
   return {

@@ -3,7 +3,7 @@ import Link from "next/link";
 const TwitList = ({ tuits }) => {
   return (
     <>
-      <h2> Twit List :</h2>
+      <h2>Twit List:</h2>
       <ul>
         {tuits.map((tuit) => (
           <li key={tuit.id}>

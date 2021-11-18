@@ -1,17 +1,15 @@
+/* eslint-disable @next/next/link-passhref */
 import Link from "next/link";
+import ReactTimeAgo from "react-time-ago";
+import TimeAgo from "javascript-time-ago";
+import en from "javascript-time-ago/locale/en.json";
 
-const TwitList = ({ tuits }) => {
-  const getDate = (date) => {
-    const yearMonth = date.split("-");
-    const dayAndTime = yearMonth[2].split("T");
-    const time = dayAndTime[1].split(":");
+TimeAgo.addLocale(en);
 
-    return `${dayAndTime[0]}-${yearMonth[1]}-${yearMonth[0]} at ${time[0]}:${time[1]}`;
-  };
+const TwitList = ({ tuits }) => (
+  <>
+    <p className="twit-list"> Twits/</p>
 
-  return (
-    <>
-      <p className="twit-list"> Twits/</p>
 
       <ul className="card">
         {tuits.map((tuit) => (
@@ -32,6 +30,7 @@ const TwitList = ({ tuits }) => {
     </>
   );
 };
+
 export default TwitList;
 
 export const getServerSideProps = async () => {

@@ -80,7 +80,7 @@ code {
 }
 
 .card_li {
-  max-width: 400px;
+  min-width: 300px;
   min-height: 500px;
   list-style: none;
   padding: 35px;
@@ -102,7 +102,29 @@ code {
 
 .card_li_info {
   font-size: 20px;
+  display: flex;
+  flex-direction: column;
 }
+
+.card_li_info_likes {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.card_li_info_likes button {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+  border: none;
+  cursor: pointer;
+  margin-top: 40px;
+}
+
+.card_li_info_likes button:hover {
+  color: rgb(195, 244, 145);
+}
+
 .title {
   font-size: 110px;
   text-transform: uppercase;

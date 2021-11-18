@@ -28,9 +28,10 @@ main {
 
 .welcome {
   font-family: Helvetica Neue, sans-serif;
-  font-size: 260px;
-  margin-bottom: 50px;
+  font-size: 230px;
+  margin-bottom: 20px;
   padding-bottom: 0;
+  margin-top: -140px;
 }
 
 .welcome:hover {
@@ -79,7 +80,7 @@ code {
 }
 
 .card_li {
-  min-width: 340px;
+  max-width: 400px;
   min-height: 500px;
   list-style: none;
   background-color: green;

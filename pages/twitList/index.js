@@ -10,26 +10,24 @@ const TwitList = ({ tuits }) => (
   <>
     <p className="twit-list"> Twits/</p>
 
-
-      <ul className="card">
-        {tuits.map((tuit) => (
-          <li key={tuit.id} className="card_li">
-            <Link href={{ pathname: "twitList/[id]", query: { id: tuit.id } }}>
-              <p>{tuit.text}</p>
-            </Link>
-            <div className="card_li_info">
-              <p>Date:{getDate(tuit.date)}</p>
-              <div className="card_li_info_likes">
-                <p>Likes: {tuit.likes}</p>
-                <button>DELETE</button>
-              </div>
+    <ul className="card">
+      {tuits.map((tuit) => (
+        <li key={tuit.id} className="card_li">
+          <Link href={{ pathname: "twitList/[id]", query: { id: tuit.id } }}>
+            <p>{tuit.text}</p>
+          </Link>
+          <div className="card_li_info">
+            <ReactTimeAgo date={Date.parse(tuit.date)} locale="en" />
+            <div className="card_li_info_likes">
+              <p>Likes: {tuit.likes}</p>
+              <button>DELETE</button>
             </div>
-          </li>
-        ))}
-      </ul>
-    </>
-  );
-};
+          </div>
+        </li>
+      ))}
+    </ul>
+  </>
+);
 
 export default TwitList;
 
@@ -40,4 +38,8 @@ export const getServerSideProps = async () => {
   return {
     props: { tuits },
   };
+};
+
+TwitList.propTypes = {
+ tuit.text: PropTypes.string,
 };

@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import HeaderNavMenu from "@/components/HeaderNavMenu/HeaderNavMenu";
+import HeaderNavMenu from "../components/HeaderNavMenu/HeaderNavMenu";
 import "../styles/global.css";
 
 // This default export is required in a new `pages/_app.js` file.

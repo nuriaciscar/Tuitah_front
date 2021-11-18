@@ -1,34 +1,30 @@
+/* eslint-disable @next/next/link-passhref */
 import Link from "next/link";
+import ReactTimeAgo from "react-time-ago";
+import TimeAgo from "javascript-time-ago";
+import en from "javascript-time-ago/locale/en.json";
 
-const TwitList = ({ tuits }) => {
-  const getDate = (date) => {
-    const yearMonth = date.split("-");
-    const dayAndTime = yearMonth[2].split("T");
-    const time = dayAndTime[1].split(":");
+TimeAgo.addLocale(en);
 
-    return `${dayAndTime[0]}-${yearMonth[1]}-${yearMonth[0]} at ${time[0]}:${time[1]}`;
-  };
+const TwitList = ({ tuits }) => (
+  <>
+    <p className="twit-list"> Twits/</p>
 
-  return (
-    <>
-      <p className="twit-list"> Twits/</p>
-
-      <ul className="card">
-        {tuits.map((tuit) => (
-          <li key={tuit.id} className="card_li">
-            <Link href={{ pathname: "twitList/[id]", query: { id: tuit.id } }}>
-              <p>{tuit.text}</p>
-            </Link>
-            <div className="card_li_info">
-              <p>Date:{getDate(tuit.date)}</p>
-              <p>Likes: {tuit.likes}</p>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </>
-  );
-};
+    <ul className="card">
+      {tuits.map((tuit) => (
+        <li key={tuit.id} className="card_li">
+          <Link href={{ pathname: "twitList/[id]", query: { id: tuit.id } }}>
+            <p>{tuit.text}</p>
+          </Link>
+          <div className="card_li_info">
+            <ReactTimeAgo date={Date.parse(tuit.date)} locale="en" />
+            <p>Likes: {tuit.likes}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </>
+);
 export default TwitList;
 
 export const getServerSideProps = async () => {

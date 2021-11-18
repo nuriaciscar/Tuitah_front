@@ -21,7 +21,10 @@ const TwitList = ({ tuits }) => {
             </Link>
             <div className="card_li_info">
               <p>Date:{getDate(tuit.date)}</p>
-              <p>Likes: {tuit.likes}</p>
+              <div className="card_li_info_likes">
+                <p>Likes: {tuit.likes}</p>
+                <button>DELETE</button>
+              </div>
             </div>
           </li>
         ))}

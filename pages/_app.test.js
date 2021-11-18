@@ -1,8 +1,8 @@
-import MyApp from "./_app"
-import {render} from"@testing-library/react"
+import { render } from "@testing-library/react";
+import MyApp from "./_app";
 
 jest.mock("next/router", () => {
-  useRouter: jest.fn().mockReturnValue({
+  jest.fn().mockReturnValue({
     events: {
       on: () => {},
     },

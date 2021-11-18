@@ -1,5 +1,6 @@
 {
   "root": true,
+  "jest": true,
   "extends": ["next/core-web-vitals", "airbnb-base", "prettier"],
   "plugins": ["testing-library"],
   "overrides": [

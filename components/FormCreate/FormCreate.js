@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import PropTypes from "prop-types";
 
 const FormCreate = () => {
   const [buttonDisabled, setButtonDisabled] = useState(true);
@@ -40,6 +41,7 @@ const FormCreate = () => {
               className="form-control"
               id="text"
               onChange={changeData}
+              maxLength={200}
             />
           </div>
           <div className="form-group">
@@ -58,3 +60,7 @@ const FormCreate = () => {
 };
 
 export default FormCreate;
+
+postData.propTypes = {
+  text: PropTypes.string,
+};

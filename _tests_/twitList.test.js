@@ -12,7 +12,7 @@ describe("Given a twitList component", () => {
     });
   });
   describe("When it's invoked,", () => {
-    test("Then it should render a list of tuits.", () => {
+    test("Then it should render a list of tuits", () => {
       const tuits = [
         {
           id: 1,
